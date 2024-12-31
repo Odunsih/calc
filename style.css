@@ -1,0 +1,344 @@
+.cont {
+    margin: 20px;
+    margin-top: 50px;
+    width: 500px;
+}
+
+#calResult {
+    border: 2px solid rgb(207, 195, 195);
+    padding: 30px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: auto auto auto auto;
+    gap: 20px;
+    width: 90%;
+}
+
+#one {
+    grid-column: 1;
+    grid-row: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#one:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#two {
+    grid-column: 2;
+    grid-row: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#two:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#three {
+    grid-column: 3;
+    grid-row: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#three:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#four {
+    grid-column: 1;
+    grid-row: 2;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#four:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#five {
+    grid-column: 2;
+    grid-row: 2;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#five:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#six {
+    grid-column: 3;
+    grid-row: 2;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#six:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#seven {
+    grid-column: 1;
+    grid-row: 3;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#seven:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#eight {
+    grid-column: 2;
+    grid-row: 3;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#eight:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#nine {
+    grid-column: 3;
+    grid-row: 3;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#nine:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#zero {
+    grid-column: 2;
+    grid-row: 4;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#zero:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
+
+#add {
+    grid-column: 4;
+    grid-row: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ccc;
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#add:hover {
+    background-color: #666;
+    font-size: 45px;
+}
+
+#sub {
+    grid-column: 4;
+    grid-row: 2;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ccc;
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#sub:hover {
+    background-color: #666;
+    font-size: 45px;
+}
+
+#mult {
+    grid-column: 4;
+    grid-row: 3;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ccc;
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#mult:hover {
+    background-color: #666;
+    font-size: 45px;
+}
+
+#div {
+    grid-column: 4;
+    grid-row: 4;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: #ccc;
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#div:hover {
+    background-color: #666;
+    font-size: 45px;
+}
+
+#equal {
+    grid-column: 3 /span 2;
+    grid-row: 5;
+    cursor: pointer;
+    border-radius: 10px;
+    /* width: 80px; */
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(241, 97, 97);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#equal:hover {
+    background-color: rgb(255, 0, 0);
+    font-size: 45px;
+}
+
+#cancel {
+    grid-column: 1;
+    grid-row: 4;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(241, 97, 97);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#cancel:hover {
+    background-color: rgb(255, 0, 0);
+    font-size: 45px;
+}
+
+#delete {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+    cursor: pointer;
+    border-radius: 10px;
+    /* width: 80px; */
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(241, 97, 97);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#delete:hover {
+    background-color: rgb(255, 0, 0);
+    font-size: 45px;
+}
+
+#dot {
+    grid-column: 3;
+    grid-row: 4;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 80px;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(245, 154, 43);
+    transition: font-size 0.5s, background-color 2s;
+}
+
+#dot:hover {
+    background-color: rgb(255, 140, 0);
+    font-size: 45px;
+}
