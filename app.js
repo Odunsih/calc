@@ -1,4 +1,6 @@
-let body = document.querySelector('body')
+
+let body = document.querySelector('body');
+let mode = document.querySelector('.mode');
 let calResult = document.getElementById('calResult');
 let one = document.getElementById('one');
 let two = document.getElementById('two');
@@ -17,6 +19,23 @@ let div = document.getElementById('div');
 let equal = document.getElementById('equal');
 let dot = document.getElementById('dot');
 let del = document.getElementById('delete');
+
+// darkmode
+
+mode.addEventListener('click', () => {
+    dark()
+})
+
+const dark = () => {
+    if (mode.innerHTML === 'Dark') {
+        mode.innerHTML = 'Light'
+        body.classList.add('dark')
+    } else {
+        mode.innerHTML = 'Dark'
+        body.classList.remove('dark')
+    }
+
+}
 
 function appendValue(value) {
     calResult.value += value;
@@ -216,3 +235,86 @@ function calculate() {
       calResult.value = 'Error'; 
     };
   };
+
+
+/***    Weather    ***/
+
+const API_KEY = 'b1b791265b034acc727db509fb1b3eec';
+async function Weather(city) {
+    const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        console.log(data)
+        weatherOutput(data);
+    }
+    catch (error) {
+        console.log('Unable to fetch weather data for your location')
+    }
+}
+
+const searchCity = () => {
+    let city = document.getElementById('city').value;
+    Weather(city);
+
+}
+
+function weatherOutput(outputData) {
+    let weatherData = document.getElementById('weatherData');
+    const {
+        name,
+        main,
+        wind
+    } = outputData;
+
+    weatherData.innerHTML = `<h2>Name: ${name}</h2>
+    <h2>Temp: ${main.temp}°C</h2>
+    <h2>Feels like: ${main.feels_like}°C</h2>
+    <h2>Wind speed: ${wind.speed}m/s</h2>`
+    
+}
+
+
+/** Todo **/
+
+let list = document.getElementById('list');
+let addTodo = document.getElementById('addTodo');
+let todos = [{}];
+
+render();
+function render() {
+    let result = '';
+    for (let index = 0; index < todos.length; index++) {
+        let element = todos[index];
+        let name = element.name;
+        let date = element.date;
+        let todoName = `<li>${name}</li>
+        ${date} <button class='todoBtn' onclick="todos.splice(${index}, 1)
+        render();">remove</button>`
+     
+        result += todoName;
+    }
+    list.innerHTML = result
+};
+
+
+addTodo.addEventListener('click', () => {
+    addTodos();
+});
+
+const addTodos = () => {
+    let todo = document.getElementById('todo');
+    let date = document.getElementById('date');
+    if (!todo.value) {
+        alert('Add todo in the input field')
+    } else {
+        todos.push({name: todo.value,
+            date: date.value
+        });
+        todo.value = ''
+        date.value =''
+    }
+    render();
+
+};

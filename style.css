@@ -1,3 +1,33 @@
+body {
+    font-family: sans-serif;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dark {
+    background-color: #000;
+    color: #fff;
+    transition: background-color 2s;
+}
+
+.dark:hover {
+    background-color: #000;
+}
+
+.mode {
+    font-size: 20px;
+    border-radius: 10px;
+    float: right;
+    background-color: #ff0000;
+    cursor: pointer;
+}
+
 .cont {
     margin: 20px;
     margin-top: 50px;
@@ -10,6 +40,9 @@
     font-size: 30px;
     margin-bottom: 20px;
     width: 90%;
+    background-color: #fff;
+    color: #000;
+    cursor: not-allowed;
 }
 
 .container {
@@ -341,4 +374,148 @@
 #dot:hover {
     background-color: rgb(255, 140, 0);
     font-size: 45px;
+}
+
+
+/* Westher section */
+
+h2 {
+    font-family: 'passero';
+}
+
+.weatherSec {
+    border: 2px solid red;
+    font-size: 20px;
+    margin-top: 60px;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: 20px;
+}
+
+#city, #todo {
+    font-size: 20px;
+    padding: 5px;
+    width: 12.5px;
+    transition: 
+    width 2s, 
+    border-radius 2s, 
+    box-shadow 2s;
+}
+
+#city:hover, #todo:hover {
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+#city:focus, #todo:focus {
+    width: 200px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #000;
+}
+
+.searchBtn, #addTodo, .todoBtn {
+    font-size: 20px;
+    padding: 5px;
+    background-color: orange;
+    border-style: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 
+    font-size 1s, 
+    color 2s,
+    box-shadow 2s;
+}
+
+.searchBtn:hover, #addTodo:hover, .todoBtn {
+    font-size: 23px;
+    color: #fff;
+    box-shadow: 5px 5px 5px #000;
+}
+
+#weatherData {
+    transition: font-size 2s;
+}
+
+#weatherData {
+    font-size: 20px;
+}
+
+/* Todo */
+
+.letDo {
+    margin: 20px;
+    border: 2px solid #ff0000;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+li {
+    margin: 10px;
+    font-size: 30px;
+}
+
+#date {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: none;
+}
+
+@font-face {
+    font-family: 'passero';
+    src: url(PasseroOne-Regular.ttf);
+}
+
+@media (max-width: 600px) {
+    body {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .cont {
+        border: 2px solid red;
+        width: 95%;
+    }
+
+    #calResult {
+        width: 90%;
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .container {
+        width: 90%;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #one,
+    #two,
+    #three,
+    #four,
+    #five,
+    #six,
+    #seven,
+    #eight,
+    #nine,
+    #zero,
+    #add,
+    #sub,
+    #mult,
+    #div,
+    #equal,
+    #cancel,
+    #delete,
+    #dot {
+        font-size: 20px;
+        width: 50%;
+    }
 }
