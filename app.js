@@ -256,7 +256,7 @@ async function Weather(city) {
 
 const searchCity = () => {
     let city = document.getElementById('city').value;
-    Weather(city);
+    Weather(city);12
 
 }
 
@@ -278,43 +278,143 @@ function weatherOutput(outputData) {
 
 /** Todo **/
 
-let list = document.getElementById('list');
-let addTodo = document.getElementById('addTodo');
-let todos = [{}];
+// let list = document.getElementById('list');
+// let addTodo = document.getElementById('addTodo');
+// let todos = [{}];
 
-render();
-function render() {
-    let result = '';
-    for (let index = 0; index < todos.length; index++) {
-        let element = todos[index];
-        let name = element.name;
-        let date = element.date;
-        let todoName = `<li>${name}</li>
-        ${date} <button class='todoBtn' onclick="todos.splice(${index}, 1)
-        render();">remove</button>`
+// let savedTodos = JSON.parse(localStorage.getItem('todos'));
+// todos = savedTodos || [];
+// render();
+// function render() {
+//     let result = '';
+//     for (let index = 0; index < todos.length; index++) {
+//         let element = todos[index];
+//         let name = element.name;
+//         let date = element.date;
+//         let todoName = `<li>${name}</li>
+//         ${date} <button class='todoBtn' onclick="todos.splice(${index}, 1) removeTodo(todo.id);
+//         render();">remove</button>`
      
-        result += todoName;
-    }
-    list.innerHTML = result
-};
+//         result += todoName;
+//         console.log(result)
+//     }
+//     list.innerHTML = result
+// };
 
 
-addTodo.addEventListener('click', () => {
-    addTodos();
-});
+// addTodo.addEventListener('click', () => {
+//     addTodos();
+// });
 
+// const addTodos = () => {
+//     let todo = document.getElementById('todo');
+//     let date = document.getElementById('date');
+//     if (!todo.value) {
+//         alert('Add todo in the input field')
+//     } else {
+//         let savedTodos = JSON.parse(localStorage.getItem('todos'));
+
+//         let Id = savedTodos.length;
+//         const newTodo = {
+//             id: Id,
+//             name: todo.value,
+//             date: date.value
+//         }
+//         todos.push({newTodo
+//         });
+//         localStorage.setItem('todos', JSON.stringify(todos));
+//         todo.value = ''
+//         date.value =''
+//     }
+//     saveTodo();
+//     render();
+
+// };
+
+// function saveTodo() {
+//     localStorage.setItem('todos', JSON.stringify(todos));
+//     console.log(todos)
+//     render();
+// }
+
+// function removeTodo(id) {
+//     const todos  = JSON.parse(localStorage.getItem('todos'));
+
+//     const updateTodo = todos.filter((todo) => todo.id !== id);
+
+//     const reindexTodo = updateTodo.map((todo, index) => {
+//         return {
+//             id: index,
+//             name: todo.name,
+//             date: todo.date
+//         }
+//     });
+
+//     localStorage.setItem('todos', JSON.stringify(reindexTodo)); 
+//     render();
+// }
+
+/*   gpt version*/
+
+const list = document.getElementById('list');
+const addTodo = document.getElementById('addTodo');
+let todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+// Render the to-do list
+function render() {
+  let result = '';
+  todos.forEach((todo, index) => {
+    result += `
+      <li>
+        ${todo.name} (${todo.date}) 
+        <button class="todoBtn" onclick="removeTodo(${index})">Remove</button>
+      </li>
+    `;
+  });
+  list.innerHTML = result;
+}
+
+// Add a new to-do
 const addTodos = () => {
-    let todo = document.getElementById('todo');
-    let date = document.getElementById('date');
-    if (!todo.value) {
-        alert('Add todo in the input field')
-    } else {
-        todos.push({name: todo.value,
-            date: date.value
-        });
-        todo.value = ''
-        date.value =''
-    }
-    render();
+  const todoInput = document.getElementById('todo');
+  const dateInput = document.getElementById('date');
+  const name = todoInput.value.trim();
+  const date = dateInput.value;
 
+  if (!name) {
+    alert('Please add a task');
+    return;
+  }
+
+  const newTodo = {
+    id: todos.length,
+    name: name,
+    date: date || 'No date specified',
+  };
+
+  todos.push(newTodo);
+  localStorage.setItem('todos', JSON.stringify(todos));
+  todoInput.value = '';
+  dateInput.value = '';
+  render();
 };
+
+// Remove a to-do
+function removeTodo(index) {
+  todos.splice(index, 1);
+
+  // Re-index IDs after removal
+  todos = todos.map((todo, i) => ({
+    ...todo,
+    id: i,
+  }));
+
+  localStorage.setItem('todos', JSON.stringify(todos));
+  render();
+}
+
+// Event listener for the Add Task button
+addTodo.addEventListener('click', addTodos);
+
+// Initial render
+render();
